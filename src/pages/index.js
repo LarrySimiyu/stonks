@@ -96,6 +96,7 @@ export default function Home() {
       setWatchedVisible(!watchedVisible);
     }
   };
+  console.log(process.env.NEXT_PUBLIC_PUBLICAPI_KEY);
 
   const handleSearch = async () => {
     // this is where the search request will go
@@ -103,8 +104,7 @@ export default function Home() {
       "https://movie-database-alternative.p.rapidapi.com/",
       {
         headers: {
-          "X-RapidAPI-Key":
-            "cb1890c8d8mshd291015209a9363p12c0c8jsn4db40fa54d67",
+          "X-RapidAPI-Key": process.env.NEXT_PUBLIC_PUBLICAPI_KEY,
           "X-RapidAPI-Host": "movie-database-alternative.p.rapidapi.com",
         },
         params: {
